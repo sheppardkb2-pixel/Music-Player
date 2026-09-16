@@ -16,7 +16,10 @@ body {
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 100px;
+  text-align: center; top: 50%;
+  font-family: 'Times New Roman', serif;
+  font-size: 3rem;
 }
 
 .title {
