@@ -12,6 +12,7 @@ const cover = document.getElementById('cover');
 const songs = ['Khamari - These Four Walls (Lyrics)', 'MORNING DEW (DONK)', 'YUKON'];
 let songIndex = 2;
 
+
 function loadSong(song) {
   title.innerText = song;
   audio.src = `music/${song}.mp3`;

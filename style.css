@@ -19,6 +19,15 @@ h1 {
   margin-bottom: 20px;
 }
 
+.title {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.title.shift-up {
+    transform: translateY(-30px);
+}
+
 .music-container {
   background: #fcf9f9;
   border-radius: 15px;
