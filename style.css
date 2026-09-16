@@ -5,7 +5,7 @@
 }
 
 body {
-  background: linear-gradient(0deg, #f7f7f7 24%, #fcdddd 92%);
+  background: linear-gradient(0deg, #f5e6ef 24%, #fd0c7d 92%);
   font-family: 'Lato', sans-serif;
   margin: 0;
   height: 100vh;
@@ -20,7 +20,7 @@ h1 {
 }
 
 .music-container {
-  background: #fff;
+  background: #fcf9f9;
   border-radius: 15px;
   box-shadow: 0 20px 20px rgba(252, 169, 169, 0.6);
   display: flex;
@@ -75,7 +75,7 @@ h1 {
 }
 
 .progress-container {
-  background: #fff;
+  background: #ffffff;
   height: 4px;
   width: 100%;
   border-radius: 5px;
@@ -99,9 +99,9 @@ h1 {
 }
 
 .action-btn {
-  background: #fff;
+  background: #ffffff;
   border: none;
-  color: #dfdbdf;
+  color: #cdc2d0;
   font-size: 20px;
   padding: 10px;
   margin: 0 20px;
