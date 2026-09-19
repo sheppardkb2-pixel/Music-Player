@@ -18,21 +18,10 @@ body {
 
 h1 {
   margin-bottom: 100px;
-  text-align: center; 
+  text-align: center;
   top: 100%;
   font-family: 'Times New Roman', serif;
-  
   font-size: 3rem;
-}
-
-.title {
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-/* When the title is shifted up, apply a transform to move it up by -10px */
-.title.shift-up {
-    transform: translateY(-10px);
 }
 
 .music-container {
@@ -41,18 +30,19 @@ h1 {
   box-shadow: 0 20px 20px rgba(252, 169, 169, 0.6);
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 20px 30px;
   position: relative;
 }
 
 .img-container {
-  width: 110px;
+  width: 120px;
   position: relative;
 }
 
 .img-container img {
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
@@ -62,7 +52,7 @@ h1 {
   animation-play-state: paused;
 }
 
-/* When the music container has the "play" class, the image will rotate */
+/* When the music container has the "play" class, the sound image will rotate */
 .music-container.play .img-container img {
   animation-play-state: running;
 }
@@ -86,11 +76,13 @@ h1 {
   z-index: 0;
 }
 
+/* When the music container has the "play" class, the music info will slide up and become visible */
 .music-container.play .music-info {
   opacity: 1;
-  transform: translateY(-100%);
+  transform: translateY(-75%);
 }
 
+/* Style the song title and artist name */
 .progress-container {
   background: #ffffff;
   height: 4px;
@@ -100,6 +92,7 @@ h1 {
   margin-top: 10px;
 }
 
+/* Style the progress bar */
 .progress {
   background: #fe8daa;
   height: 100%;
@@ -108,6 +101,7 @@ h1 {
   transition: width 0.1s linear;
 }
 
+/* Style the navigation buttons */
 .navigation {
   display: flex;
   align-items: center;
