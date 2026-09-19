@@ -9,6 +9,8 @@ const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
+const currentTimeEl = document.getElementById('current-time');
+const durationEl = document.getElementById('duration');
 
 // Songs array and index to keep track of the current song //
 const songs = ['Khamari - These Four Walls (Lyrics)', 'MORNING DEW (DONK)', 'YUKON'];
@@ -20,6 +22,8 @@ function loadSong(song) {
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
   cover.src = `images/${song}.jpg`;
+  currentTimeEl.textContent = '00:00';
+  durationEl.textContent = '00:00';
 }
 
 loadSong(songs[songIndex]);
@@ -43,13 +47,14 @@ playBtn.addEventListener('click', () => {
   isPlaying ? pauseSong() : playSong();
 });
 
-// Add previous and next song functions //
+// Add helper functions for previous and next song functions //
 function prevSong() {
   songIndex = (songIndex - 1 + songs.length) % songs.length;
   loadSong(songs[songIndex]);
   playSong();
 }
 
+// Add helper function for next song function //
 function nextSong() {
   songIndex = (songIndex + 1) % songs.length;
   loadSong(songs[songIndex]);
@@ -59,14 +64,26 @@ function nextSong() {
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 
-// Update progress bar as the song plays //
+function formatTime(seconds) {
+  if (Number.isNaN(seconds) || seconds < 0) return '00:00';
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+
+// Update the timer text and both progress visuals as the song plays //
 function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
   const percent = (currentTime / duration) * 100;
   progress.style.width = `${percent}%`;
+  currentTimeEl.textContent = formatTime(currentTime);
+  durationEl.textContent = formatTime(duration);
 }
 
 audio.addEventListener('timeupdate', updateProgress);
+audio.addEventListener('loadedmetadata', () => {
+  durationEl.textContent = formatTime(audio.duration);
+});
 
 // Set the progress of the song when the user clicks on the progress bar //
 function setProgress(e) {
@@ -75,8 +92,8 @@ function setProgress(e) {
   audio.currentTime = (clickX / width) * audio.duration;
 }
 
-// Add event listener to the progress container to allow users to click and set the progress of the song //
 progressContainer.addEventListener('click', setProgress);
 
 // When the song ends, automatically play the next song //
 audio.addEventListener('ended', nextSong);
+
