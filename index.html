@@ -12,20 +12,30 @@
 
   <h1>Music Player</h1>
 
+  <!-- Music Player Container -->
   <div class="music-container" id="music-container">
     <div class="music-info">
-      <h4 id="title"></h4>
+      <h4 id="title">Khamari - These Four Walls (Lyrics)</h4>
       <div class="progress-container" id="progress-container">
         <div class="progress" id="progress"></div>
+
+        <!-- Progress Bar -->
+      </div>
+      <div class="time-display">
+        <span id="current-time">00:00</span>
+        <span class="divider">/</span>
+        <span id="duration">00:00</span>
       </div>
     </div>
 
+<!-- Audio Elements -->
     <audio id="audio" src="music/Khamari - These Four Walls (Lyrics).mp3"></audio>
 
     <div class="img-container">
       <img src="images/Khamari - These Four Walls (Lyrics).jpg" alt="Album Cover" id="cover" />
     </div>
 
+    <!-- Navigation Buttons -->
     <div class="navigation">
       <button id="prev" class="action-btn"><i class="fas fa-backward"></i></button>
       <button id="play" class="action-btn action-btn-big"><i class="fas fa-play"></i></button>
