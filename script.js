@@ -21,7 +21,7 @@ let songIndex = 0;
 function loadSong(song) {
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
-  cover.src = `images/${song}.jpg`;
+  cover.src = `Images/${song}.jpg`;
   currentTimeEl.textContent = '00:00';
   durationEl.textContent = '00:00';
 }
