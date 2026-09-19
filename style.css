@@ -1,3 +1,4 @@
+// Music Player CSS Stylesheet //
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 * {
@@ -17,8 +18,10 @@ body {
 
 h1 {
   margin-bottom: 100px;
-  text-align: center; top: 50%;
+  text-align: center; 
+  top: 100%;
   font-family: 'Times New Roman', serif;
+  
   font-size: 3rem;
 }
 
@@ -27,8 +30,9 @@ h1 {
     transition: transform 0.3s ease;
 }
 
+// When the title is shifted up, apply a transform to move it up by 10px //
 .title.shift-up {
-    transform: translateY(-30px);
+    transform: translateY(-10px);
 }
 
 .music-container {
@@ -58,6 +62,7 @@ h1 {
   animation-play-state: paused;
 }
 
+// When the music container has the "play" class, the image will rotate //
 .music-container.play .img-container img {
   animation-play-state: running;
 }
